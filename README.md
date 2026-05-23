@@ -1,6 +1,6 @@
 # CI-CD_automation_Repo
 This is my ci/cd related project repo
-##workflow
+workflow
 
--hii (/.github/workflows/hello.yml)
+- hii [.github/workflows/hello.yml]
 
