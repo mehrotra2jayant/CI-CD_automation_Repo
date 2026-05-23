@@ -4,7 +4,7 @@ on:
  push:
    branches: main
    paths:
-     - '**.yml'
+     - '**.html'
 #Now adding the JOb inside the workflow
 jobs:
 # Below is the name of the job  
