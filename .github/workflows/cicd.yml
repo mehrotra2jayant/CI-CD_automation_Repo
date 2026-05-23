@@ -1,0 +1,30 @@
+# This is my manually excecuting cicd pipeline.
+name: cicd  #anme of the workflow
+on:
+ workflow_dispatch:    # manual run pipeline whienever user needs
+
+jobs:
+  code:     #job1
+   runs-on: ubuntu-latest
+   steps:
+     - name: checkout the code
+       run: echo "code clone form github"
+
+  build:   #job2
+   runs-on: ubuntu-latest
+   steps:
+     - name: build docker contanier
+       run: echo "docker container buils"
+
+  test:   #job3
+   runs-on: ubuntu-latest
+   steps:
+     - name: test the container
+       run: echo "test the contaner is running"
+
+  deploy:   #job4
+   runs-on: ubuntu-latest
+   steps:
+     - name: deploy the application
+       run:  echo "application deplyed by docker compose"
+  
