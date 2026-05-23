@@ -14,7 +14,11 @@ jobs:
      - name: sat hi to username
        run: echo "hello $USER"
 
-       
+     - run: whoami
+
+     - run: pwd
+     - run: hostname
+     - run: ls -la
     
        
   
