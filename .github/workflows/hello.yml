@@ -6,7 +6,7 @@ on:
 #Now adding the JOb inside the workflow
 jobs:
 # Below is the name of the job  
-  greet:
+  job1_greet:
    runs-on: ubuntu-latest  # this is the server, every job needs a server
    steps:
      - name: say hi to the user
@@ -20,6 +20,13 @@ jobs:
      - run: hostname
      - run: ls -la
     
-       
+    details:
+     runs-on: ubuntu-latest
+     steps:
+      - name: tell me the verion of python and docker
+        run: docker --version && python --version
+  
+  
+
   
    
