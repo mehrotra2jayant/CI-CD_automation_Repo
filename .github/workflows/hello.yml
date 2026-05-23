@@ -1,0 +1,21 @@
+#This is the name of the workflow
+name: Hello
+on:
+ push:
+   branches: main
+#Now adding the JOb inside the workflow
+jobs:
+# Below is the name of the job  
+  greet:
+   runs-on: ubuntu-latest  # this is the server, every job needs a server
+   steps:
+     - name: say hi to the user
+       run: echo "heloo Jayant"
+     - name: sat hi to username
+       run: echo "hello $USER"
+
+       
+    
+       
+  
+   
