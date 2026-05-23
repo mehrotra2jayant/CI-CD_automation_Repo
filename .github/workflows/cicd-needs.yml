@@ -1,4 +1,4 @@
-# This is my manually excecuting cicd pipeline.
+# using needs here, each jobs depends on each other. This is my manually excecuting cicd pipeline.
 name: cicd  #anme of the workflow
 on:
  workflow_dispatch:    # manual run pipeline whienever user needs
