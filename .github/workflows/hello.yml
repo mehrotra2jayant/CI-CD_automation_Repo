@@ -20,7 +20,7 @@ jobs:
      - run: hostname
      - run: ls -la
     
-    details:
+  job2details:
      runs-on: ubuntu-latest
      steps:
       - name: tell me the verion of python and docker
