@@ -2,5 +2,5 @@
 This is my ci/cd related project repo
 workflow
 
-- hii [.github/workflows/hello.yml]
+- hii [.github/workflows/hello.html]
 
