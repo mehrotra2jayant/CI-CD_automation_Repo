@@ -6,7 +6,7 @@ on:
 #Now adding the JOb inside the workflow
 jobs:
 # Below is the name of the job  
-  job1_greet:
+  job1greet:
    runs-on: ubuntu-latest  # this is the server, every job needs a server
    steps:
      - name: say hi to the user
