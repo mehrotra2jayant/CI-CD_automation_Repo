@@ -3,9 +3,9 @@ name: cicd  #anme of the workflow
 on:
  workflow_dispatch:    # manual run pipeline whienever user needs
   inputs:
-    environmet:
+    environment:
      description: This is a env, where you wnat to run your worflow
-     default: 'dev'
+     default: 'prod'
      type: choice
      required: true
      options:
