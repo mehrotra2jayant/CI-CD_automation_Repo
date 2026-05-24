@@ -2,6 +2,15 @@
 name: cicd  #anme of the workflow
 on:
  workflow_dispatch:    # manual run pipeline whienever user needs
+  inputs:
+    environmet:
+     description: This is a env, where you wnat to run your worflow
+     type: choice
+     required: true
+     options:
+       - dev
+       - prod
+       - staging
 
 jobs:
   code:     #job1
