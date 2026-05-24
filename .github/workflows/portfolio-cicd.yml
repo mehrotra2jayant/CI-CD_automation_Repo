@@ -1,40 +1,35 @@
 ## this is template for github pages deployment using github actions
 name: portfolio-cicd
-on: 
-    push:
-        branches: [main]
-        workflow_dispatch:
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
 permissions:
-    contents: read
-    pages: write
-    id-token: write 
-
+  contents: read
+  pages: write
+  id-token: write
 jobs:
-    deploy:
-        runs-on: ubuntu-latest
-        environment:
-            name: github-pages
-            url: ${{ step.deployment.outputs.pages.url}}
-        
-     steps:
-        ## we required the access to poertfolio code via pre-buil action
-        ## clone or checkout the code where workflow is running
-        ## step1: checkout the code repo
-
-       - name: checkout the code repo
-         uses: actions/checkoout@v4
-  
-        ## step2: setup the github pages
-       - name: setup githib pages
-         uses: actions/configure-pages@v4
-
-        ## step3:upload the portfolio code/ statis code artiifacts to github pages
-        - name: static artifacts
-          uses: action-upload-pages@v4
-          with:
-            path: "."
-
-        ## make the deployment or page live here
-        - name: deploy to github pages
-          id: deployment
-          uses: actions/deploy-pages@v4
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.pages.url }}
+    steps:
+      ## we required the access to portfolio code via pre-build action
+      ## clone or checkout the code where workflow is running
+      ## step1: checkout the code repo
+      - name: checkout the code repo
+        uses: actions/checkout@v4
+      ## step2: setup the github pages
+      - name: setup github pages
+        uses: actions/configure-pages@v4
+      ## step3: upload the portfolio code / static code artifacts to github pages
+      - name: static artifacts
+        uses: actions/upload-pages@v4
+        with:
+          path: "."
+      ## make the deployment or page live here
+      - name: deploy to github pages
+        id: deployment
+        uses: actions/deploy-pages@v4
