@@ -1,0 +1,6 @@
+name: portfolio-cicd
+on: 
+    push:
+        branches: [main]
+        workflow_dispatch:
+                    
