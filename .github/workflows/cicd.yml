@@ -2,7 +2,18 @@
 name: cicd  #anme of the workflow
 on:
  workflow_dispatch:    # manual run pipeline whienever user needs
-
+  inputs:
+   environment:
+    description: This the environmnet value where workflow run
+    type: choice
+    required: true
+   # default: 'dev'
+    options:
+     
+      - dev
+      - prod
+      - staging
+    
 jobs:
   code:     #job1
    runs-on: ubuntu-latest
