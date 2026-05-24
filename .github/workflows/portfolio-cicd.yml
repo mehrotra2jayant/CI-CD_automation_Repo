@@ -1,35 +1,44 @@
-## this is template for github pages deployment using github actions
-name: portfolio-cicd
+name: Portfolio
+
 on:
-  push:
-    branches:
-      - main
-  workflow_dispatch:
+    # push:
+    #     branches: [main]
+    workflow_dispatch:
+
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+    pages: write      
+    id-token: write   
+    contents: read
+
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.pages.url }}
-    steps:
-      ## we required the access to portfolio code via pre-build action
-      ## clone or checkout the code where workflow is running
-      ## step1: checkout the code repo
-      - name: checkout the code repo
-        uses: actions/checkout@v4
-      ## step2: setup the github pages
-      - name: setup github pages
-        uses: actions/configure-pages@v4
-      ## step3: upload the portfolio code / static code artifacts to github pages
-      - name: static artifacts
-        uses: actions/upload-pages@v4
-        with:
-          path: "."
-      ## make the deployment or page live here
-      - name: deploy to github pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+    deploy:
+        runs-on: ubuntu-latest
+
+        environment:
+            name: github-pages
+            url: ${{ steps.deployment.outputs.page_url }} 
+
+        steps:
+            # get access to your Portfolio code via pre-built actions
+            # clones or checks out the code where this workflow is written
+            # STEP 1
+            - name: Checkout Code 
+              uses: actions/checkout@v4 
+
+            # setup GitHub Pages
+            # STEP 2
+            - name: Setup GitHub Pages
+              uses: actions/configure-pages@v4
+
+            # static code artifacts
+            # STEP 3
+            - name: Upload static files
+              uses: actions/upload-pages-artifact@v4
+              with:
+                path: "."
+            
+            # Make page Live
+            # STEP 4
+            - name: Deploy to Github pages
+              id: deployment
+              uses: actions/deploy-pages@v4
