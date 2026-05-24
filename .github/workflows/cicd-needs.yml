@@ -35,6 +35,7 @@ jobs:
        run: echo "test the contaner is running"
 
   deploy:   #job4
+   if: inputs.environment == 'dev'
    needs: test
    runs-on: ubuntu-latest
    steps:
