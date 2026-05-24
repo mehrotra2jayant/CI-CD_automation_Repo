@@ -5,6 +5,7 @@ on:
   inputs:
     environmet:
      description: This is a env, where you wnat to run your worflow
+     default: 'dev'
      type: choice
      required: true
      options:
