@@ -35,9 +35,9 @@ jobs:
        run: echo "test the contaner is running"
 
   deploy:   #job4
-   if: inputs.environment == 'dev' # Due to this this job will be skipped, will not execute.
-   needs: test
-   runs-on: ubuntu-latest
-   steps:
+    if: inputs.environment == 'dev' # Due to this this job will be skipped, will not execute.
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
      - name: deploy the application
        run:  echo "application deplyed by docker compose"
