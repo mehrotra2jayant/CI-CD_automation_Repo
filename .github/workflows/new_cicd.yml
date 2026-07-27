@@ -1,0 +1,30 @@
+# This is the name of the workflow displayed in the Actions tab
+name: newcicd
+
+on:
+  workflow_dispatch:
+
+jobs:
+  code:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the code
+        run: echo "Code cloned from GitHub"
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build the Docker container
+        run: echo "Docker container build"
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test the container
+        run: echo "Testing the container"
+
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy the application
+        run: echo "Docker Compose deploy the application"
