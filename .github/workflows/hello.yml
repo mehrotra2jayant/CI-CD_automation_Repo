@@ -1,10 +1,10 @@
-#This is the name of the workflo
+#This is the name of the workfloww
 name: Hello
 on:
  push:
    branches: main
    paths:
-     - '**.md'
+     - '**.yml'
 #Now adding the JOb inside the workflow
 jobs:
 # Below is the name of the job  
